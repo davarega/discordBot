@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../../cofig.json');
+const config = require('../../config.json');
 require('colors');
 
 module.exports = {
