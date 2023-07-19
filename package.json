@@ -8,11 +8,5 @@
   },
   "keywords": [],
   "author": "luvizar",
-  "license": "ISC",
-  "dependencies": {
-    "ascii-table": "^0.0.9",
-    "colors": "^1.4.0",
-    "discord.js": "^14.11.0",
-    "mongoose": "^7.3.4"
-  }
+  "license": "ISC"
 }
