@@ -1,0 +1,1 @@
+npm i discord.js mongoose colors ascii-table @discordjs/voice distube @distube/soundcloud @distube/spotify @distube/yt-dlp @discordjs/opus
