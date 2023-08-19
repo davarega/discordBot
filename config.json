@@ -1,4 +1,10 @@
 {
-  "token": "",
-  "mongodb": "",
+  "devUserID": "",
+  "devUserGuild": "",
+  "supportServerUrl": "",
+  "webhook": {
+		"skynara": "",
+		"error": "",
+		"suggestion": ""
+	}
 }
