@@ -1,19 +1,37 @@
 const mongoose = require('mongoose');
-const config = require('../../config.json');
+const client = require('../../index.js')
+const { logHandler } = require('../../Handlers/logHandler');
 require('colors');
+
+const activities = [
+	"/help",
+	"New Version.",
+	"By Luvizar",
+	"Look Better"
+];
 
 module.exports = {
 	name: "ready",
 	once: true,
+	/**
+	 * 
+	 * @param {client} client 
+	 */
+	async execute(client) {
+		await mongoose.connect(process.env.MONGO_DB || "", {
+			useNewUrlParser: true,
+			useUnifiedTopology: true
+		}).then(() => {
+			logHandler("client", "0", "[MONGODB]");
+		}).catch(err => console.log(err));
 
-	async execute(client, interaction) {
-		await mongoose.connect(config.mongodb || "", {
-			keepAlive: true,
-		});
+		setInterval(() => {
+			const randomIndex = Math.floor(Math.random() * activities.length);
+			const newActivity = activities[randomIndex];
 
-		if(mongoose.connect)
-		console.log('[MONGODB]'.green, "Database connected!");
+			client.user.setActivity(newActivity);
+		}, 15_000);
 
-		console.log(`${client.user.username} is online!`);
+		logHandler("client", "1", client.user.username);
 	}
 }
